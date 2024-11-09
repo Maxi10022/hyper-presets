@@ -3,5 +3,29 @@
     "fs-extra": "^11.2.0",
     "platform-folders": "^0.6.0",
     "yargs": "^17.7.2"
-  }
+  },
+  "name": "hyper-profile",
+  "version": "1.0.0",
+  "description": "Simple profile manager for the Hyper terminal. Currently only supports Windows PowerShell.",
+  "main": "hyper-profile.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maxi10022/hyper-presets.git"
+  },
+  "keywords": [
+    "Hyper",
+    "Terminal",
+    "Profiles",
+    "PowerShell"
+  ],
+  "author": "Maximilian Hollnbuchner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Maxi10022/hyper-presets/issues"
+  },
+  "homepage": "https://github.com/Maxi10022/hyper-presets#readme"
 }
