@@ -6,7 +6,7 @@ const { getShellDir } = require('./shellHelper');
 
 // Function to install templates for a specified shell
 function install(shell) {
-    const templatesDir = path.join(__dirname, '..', 'templates');
+    const templatesDir = path.join(__dirname, 'templates');
     const hyperDir = path.join(getDataHome(), 'Hyper');
     const hyperTemplates = [];
     const shellProfiles = [];
