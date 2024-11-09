@@ -1,5 +1,32 @@
 # Hyper Profile Manager
 
+## Quickstart
+
+Installation: 
+
+```bash
+npm i -g hyper-profile
+```
+
+Install available templates for your shell: 
+
+```bash
+hyper-profile --install <shell>
+```
+
+Switch between profiles:
+
+```bash
+hyper-profile --name <profileName>
+```
+
+Available profiles: 
+
+* default
+* marketing
+
+<hr>
+
 ## Overview
 **Hyper Profile Manager** is a command-line tool designed to streamline the management of different Hyper terminal configurations and associated shell profiles. It allows you to switch between predefined Hyper profiles and shell-specific profile scripts seamlessly.
 
@@ -16,7 +43,7 @@ The tool provides the following main commands for usage:
 Switch to a different Hyper profile:
 
 ```bash
-node hyper-profile.js --name <profileName>
+hyper-profile --name <profileName>
 ```
 
 - `<profileName>`: Name of the profile you want to activate (e.g., `default`, `marketing`).
@@ -25,7 +52,7 @@ node hyper-profile.js --name <profileName>
 Install templates for a specific shell:
 
 ```bash
-node hyper-profile.js --install <shell>
+hyper-profile --install <shell>
 ```
 
 - `<shell>`: The shell for which to install templates (e.g., `powershell`).
@@ -35,14 +62,14 @@ node hyper-profile.js --install <shell>
 1. Ensure the `~/.hyper.js` main Hyper configuration file is present.
 2. Run the command:
    ```bash
-   node hyper-profile.js --name default
+   hyper-profile --name default
    ```
    This will switch the current configuration to the `default` profile and update the corresponding shell profile.
 
 ### Installing Shell Templates
 To install profile templates for a specific shell, use:
 ```bash
-node hyper-profile.js --install powershell
+hyper-profile --install powershell
 ```
 This copies predefined templates to the appropriate directories for Hyper and the specified shell.
 
@@ -54,9 +81,7 @@ This copies predefined templates to the appropriate directories for Hyper and th
 - **`shellHelper.js`**: Helper functions for determining the shell profile directory.
 
 ## Requirements
-- **Node.js**: Ensure Node.js is installed to execute the scripts.
-- **Platform-Folders Package**: Used to determine standard platform directories.
-- **fs-extra Package**: Required for enhanced file system operations.
+- **Node.js**: Ensure Node.js is installed.
 
 ## Supported Profiles
 The tool currently supports the following profiles:
@@ -74,12 +99,12 @@ The tool currently supports the following profiles:
 ## Example Scenarios
 1. **Switch to the `default` profile**:
    ```bash
-   node hyper-profile.js --name default
+   hyper-profile --name default
    ```
 
 2. **Install templates for PowerShell**:
    ```bash
-   node hyper-profile.js --install powershell
+   hyper-profile --install powershell
    ```
 
 ## Contribution
