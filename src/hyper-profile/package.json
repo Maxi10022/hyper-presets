@@ -27,5 +27,8 @@
   "bugs": {
     "url": "https://github.com/Maxi10022/hyper-presets/issues"
   },
-  "homepage": "https://github.com/Maxi10022/hyper-presets#readme"
+  "homepage": "https://github.com/Maxi10022/hyper-presets#readme",
+  "bin":{
+    "hyper-profile": "./hyper-profile.js"
+  }
 }
