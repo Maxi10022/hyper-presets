@@ -5,7 +5,7 @@
     "yargs": "^17.7.2"
   },
   "name": "hyper-profile",
-  "version": "1.0.2",
+  "version": "1.0.6",
   "description": "Simple profile manager for the Hyper terminal. Currently only supports Windows PowerShell.",
   "main": "hyper-profile.js",
   "devDependencies": {},
@@ -28,7 +28,7 @@
     "url": "https://github.com/Maxi10022/hyper-presets/issues"
   },
   "homepage": "https://github.com/Maxi10022/hyper-presets#readme",
-  "bin":{
-    "hyper-profile": "./hyper-profile.js"
+  "bin": {
+    "hyper-profile": "hyper-profile.js"
   }
 }
