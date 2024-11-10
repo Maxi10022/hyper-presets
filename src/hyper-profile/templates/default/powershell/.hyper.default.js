@@ -4,14 +4,22 @@
 // See https://hyper.is#cfg for all currently supported options.
 module.exports = {
     config: {    
+        verminal: {
+            fontFamily: '"Consolas"',
+            fontSize: 16,
+            colors: {
+                lightBlack: "#bfbfbf", // Used for coloring arguments 
+        },
+        },
+        windowSize: [800, 500],
         opacity: 0.95,
         // choose either `'stable'` for receiving highly polished,
         // or `'canary'` for less polished but more frequent updates
         updateChannel: 'stable',
         // default font size in pixels for all tabs
-        fontSize: 14,
+        fontSize: 16,
         // font family with optional fallbacks
-        fontFamily: '"Fira Code", "JetBrains Mono", monospace',
+        fontFamily: '"Consolas"',
         // default font weight: 'normal' or 'bold'
         fontWeight: 'normal',
         // font weight for bold characters: 'normal' or 'bold'
@@ -21,30 +29,42 @@ module.exports = {
         // letter spacing as a relative unit
         letterSpacing: 0,
         // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
-        cursorColor: 'rgba(248,28,229,0.8)',
+        cursorColor: '#50fa7b',
         // terminal text color under BLOCK cursor
         cursorAccentColor: '#000',
         // `'BEAM'` for |, `'UNDERLINE'` for _, `'BLOCK'` for █
-        cursorShape: 'BLOCK',
+        cursorShape: 'BEAM',
         // set to `true` (without backticks and without quotes) for blinking cursor
-        cursorBlink: false,
+        cursorBlink: true,
         // color of the text
-        foregroundColor: '#fff',
+        foregroundColor: '#ffffff',
         // terminal background color
         // opacity is only supported on macOS
         backgroundColor: '#000',
         // terminal selection color
-        selectionColor: 'rgba(248,28,229,0.3)',
+        selectionColor: '#2c7a7b',
         // border color (window, tabs)
-        borderColor: '#333',
+        // borderColor: '#4287f5',
         // custom CSS to embed in the main window
         css: `
         .hyper_main {
-            border: none;
+            background: linear-gradient(-120deg, #1e1e2f, #131317);
+        }
+
+        .terminal.xterm {
+          mix-blend-mode: color-dodge;
         }
         .tabs_title {
             display: none;
-        }`,
+        }
+        .header_windowHeader {
+            font-size: 12px;
+            color: #ffffff;
+        }
+        .tabs_title {
+            font-family: "Consolas", sans-serif;
+        }
+        `,
         // custom CSS to embed in the terminal window
         termCSS: '',
         // set custom startup directory (must be an absolute path)
@@ -58,29 +78,6 @@ module.exports = {
         showWindowControls: true,
         // custom padding (CSS format, i.e.: `top right bottom left`)
         padding: '20px 20px',
-        // the full list. if you're going to provide the full color palette,
-        // including the 6 x 6 color cubes and the grayscale map, just provide
-        // an array here instead of a color map object
-        colors: {
-            black: '#000000',
-            red: '#C51E14',
-            green: '#1DC121',
-            yellow: '#C7C329',
-            blue: '#0A2FC4',
-            magenta: '#C839C5',
-            cyan: '#20C5C6',
-            white: '#C7C7C7',
-            lightBlack: '#686868',
-            lightRed: '#FD6F6B',
-            lightGreen: '#67F86F',
-            lightYellow: '#FFFA72',
-            lightBlue: '#6A76FB',
-            lightMagenta: '#FD7CFC',
-            lightCyan: '#68FDFE',
-            lightWhite: '#FFFFFF',
-            limeGreen: '#32CD32',
-            lightCoral: '#F08080',
-        },
         // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
         // if left empty, your system's login shell will be used by default
         //
@@ -103,9 +100,10 @@ module.exports = {
         // for setting shell arguments (i.e. for using interactive shellArgs: `['-i']`)
         // by default `['--login']` will be used
         shellArgs: [
-            '-NoLogo', 
-            '-ExecutionPolicy', 'Bypass',  
+            '-NoLogo',
+            '-ExecutionPolicy', 'Bypass',          
         ],
+
         // for environment variables
         env: {},
         // Supported Options:
@@ -148,8 +146,10 @@ module.exports = {
     //   `@company/project`
     //   `project#1.0.1`
     plugins: [
-        "hyper-dracula",
-        "hyper-opacity",
+        'verminal',
+        'hyper-opacity',
+        'hyper-search',  
+        'hyper-font-ligatures'
     ],
     // in development, you can create a directory under
     // `~/.hyper_plugins/local/` and include it here
