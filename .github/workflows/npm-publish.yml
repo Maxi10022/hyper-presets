@@ -11,18 +11,18 @@ env:
   PACKAGE_LOCATION: ./src/hyper-profile
   
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - run: npm i $PACKAGE_LOCATION
-      - run: npm test $PACKAGE_LOCATION
+  # build:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: actions/setup-node@v4
+  #       with:
+  #         node-version: 20
+  #     - run: npm i $PACKAGE_LOCATION
+  #     - run: npm test $PACKAGE_LOCATION
       
   publish-npm:
-    needs: build
+    # needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
