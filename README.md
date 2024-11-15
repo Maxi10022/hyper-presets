@@ -14,6 +14,10 @@ Install available templates for your shell:
 hyper-profile --install <shell>
 ```
 
+Currently available shells:
+
+* powershell
+
 Switch between profiles:
 
 ```bash
