@@ -18,7 +18,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm ci $PACKAGE_LOCATION
+      - run: npm i $PACKAGE_LOCATION
       - run: npm test $PACKAGE_LOCATION
       
   publish-npm:
@@ -32,7 +32,7 @@ jobs:
           registry-url: https://registry.npmjs.org/
 
       - run: cp ./README.md $PACKAGE_LOCATION
-      - run: npm ci $PACKAGE_LOCATION
+      - run: npm i $PACKAGE_LOCATION
       - run: npm publish $PACKAGE_LOCATION
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
