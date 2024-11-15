@@ -36,7 +36,7 @@ jobs:
       - run: |
           VERSION=${GITHUB_REF_NAME#v}
           PACKAGE=${PACKAGE_LOCATION}/package.json
-          jq '.version = "$VERSION"' $PACKAGE> temp.json && mv temp.json $PACKAGE
+          jq ".version = \"$VERSION\"" $PACKAGE> temp.json && mv temp.json $PACKAGE
           cat $PACKAGE
       - run: npm i $PACKAGE_LOCATION
       - run: npm publish $PACKAGE_LOCATION
