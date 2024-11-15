@@ -35,7 +35,7 @@ jobs:
       - run: cp ./README.md $PACKAGE_LOCATION
       - run: |
           VERSION=${GITHUB_REF_NAME#v}
-          sed -i 's/"theme": *"[^"]*"/"version": "VERSION"/' package.json
+          sed -i 's/"theme": *"[^"]*"/"version": "VERSION"/' ${PACKAGE_LOCATION}/package.json
       - run: npm i $PACKAGE_LOCATION
       - run: npm publish $PACKAGE_LOCATION
         env:
